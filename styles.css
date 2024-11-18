@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+html {
+  box-sizing: border-box;
+  background-image: url("/img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+/*Gloabal*/
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*main*/
+
+.main__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main__title {
+  margin: 0;
+  color: silver;
+  font-size: 48px;
+}
+
+.main__image {
+    position: relative;
+    padding-top: 50px;
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    animation: fly-to-center 2s ease-out forwards;
+}
+
+.light {
+    opacity: 0;
+    top: 225px;
+    right: 135px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 20px 5px white;
+    animation: blink 2s infinite;
+    animation-delay: 2s;
+}
+
+@keyframes fly-to-center {
+    0% {
+        top: -100px;
+        left: -100px;
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(15deg);
+    }
+
+    100% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%) scale(1) rotate(0deg);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.5;
+        box-shadow: 0 0 20px 5px white;
+    }
+    50% {
+        opacity: 0.2;
+        box-shadow: 0 0 5px 2px white;
+    }
+}
+
+.b-day {
+    background-color: #050306;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    margin-top: 500px;
+}
+
+.b-day__text-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.b-day__text {
+    font-size: 24px;
+    color: silver;
+}
